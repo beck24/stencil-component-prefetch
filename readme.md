@@ -141,7 +141,7 @@ Early-return on lifecycle hooks that perform actions unwanted during pre-fetchin
 
 When prefetching this component just set the prop `prefetching` to true in the `app-root`
 
-  componentDidRender() {
+    componentDidRender() {
 
       const componentsConfig = [
         {
