@@ -126,7 +126,7 @@ Early-return on lifecycle hooks that perform actions unwanted during pre-fetchin
       }
 
       // all state stuff ignored during pre-fetch
-      this.store.mapStateToProp(this, state => {
+      this.store.mapStateToProps(this, state => {
 
       });
     }
