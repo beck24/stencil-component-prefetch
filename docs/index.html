@@ -1,0 +1,69 @@
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Stencil Component Prefetch</title> <script src="https://unpkg.com/@beck24/example-code-component/dist/example-code.js"></script> <script type="module" src="./build/stencil-component-prefetch.esm.js"></script> <script nomodule="" src="./build/stencil-component-prefetch.js"></script> <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script> <style>.layout-width {
+      padding: 0 2rem;
+      margin: 0 auto;
+      max-width: 1200px;
+    }
+
+    example-code {
+      display: block;
+      margin-bottom: 3rem;
+    }</style> <script>var addExample1 = function() {
+      const container = document.querySelector('#example-1');
+      const component = document.createElement('example-component-1');
+
+      container.innerHTML = '';
+      container.appendChild(component);
+    }
+
+    var addExample2 = function() {
+      const container = document.querySelector('#example-2');
+      const component = document.createElement('example-component-2');
+
+      container.innerHTML = '';
+      container.appendChild(component);
+    }
+
+    var prefetchComponents = function() {
+      const prefetcher = document.querySelector('#example-2-prefetcher');
+
+      const components = [
+        {
+          tag: 'example-component-2'
+        }
+      ];
+
+      prefetcher.setDelay(0).then(() => {
+        prefetcher.setComponents(components);
+      });
+    }</script> </head> <body onload="prefetchComponents()"> <header class="layout-width"> <div class="jumbotron"> <h1 class="display-4">Stencil Component Prefetch</h1> <p class="lead">A web component for pre-fetching the code for additional components used later in the app.</p> </div> </header> <main> <section class="layout-width"> <example-code> <div slot="example"> <h5>Without Pre-fetching</h5> <p> This example component does not exist anywhere in the DOM on page load, so the code is not retrieved by the browser.<br> Open up developer tools and inspect the network tab.<br> Clear the history to make it easier to see new requests.<br> Click the button and you will see a new network request for the component as it is added. </p> <button onclick="addExample1()">Add Example 1 Component</button> <div id="example-1"></div> </div> <pretty-code slot="html" language="html"> &lt;button onClick="addExample1()"&gt;Add Example 1 Component&lt;/button&gt;
+
+&lt;div id="example-1"&gt;&lt;/div&gt; </pretty-code> <pretty-code slot="javascript" language="js"> var addExample1 = function() {
+  const container = document.querySelector('#example-1');
+  const component = document.createElement('example-component-1');
+
+  container.innerHTML = '';
+  container.appendChild(component);
+} </pretty-code> </example-code> <example-code> <div slot="example"> <h5>With Pre-fetching</h5> <p> This example component does not exist anywhere in the DOM on page load, but is pre-fetched by the browser.<br> Open up developer tools and inspect the network tab.<br> Clear the history to make it easier to see new requests.<br> Click the button and you will see NO network request for the component as it has been pre-fetched.<br> </p> <button onclick="addExample2()">Add Example 2 Component</button> <div id="example-2"></div> <stencil-component-prefetch id="example-2-prefetcher"></stencil-component-prefetch> </div> <pretty-code slot="html" language="html"> &lt;button onClick="addExample2()"&gt;Add Example 2 Component&lt;/button&gt;
+
+&lt;div id="example-2"&gt;&lt;/div&gt;
+
+&lt;stencil-component-prefetch id="example-2-prefetcher"&gt;&lt;/stencil-component-prefetch&gt; </pretty-code> <pretty-code slot="javascript" language="js"> // on load
+const prefetcher = document.querySelector('#example-2-prefetcher');
+
+const components = [
+  {
+    tag: 'example-component-2'
+  }
+];
+
+prefetcher.setDelay(0).then(() =&gt; {
+  prefetcher.setComponents(components);
+});
+
+var addExample2 = function() {
+  const container = document.querySelector('#example-2');
+  const component = document.createElement('example-component-2');
+
+  container.innerHTML = '';
+  container.appendChild(component);
+} </pretty-code> </example-code> </section> </main> <footer class="layout-width"> Made by Matt Beckett </footer> <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> </body></html>

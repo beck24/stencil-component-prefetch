@@ -1,0 +1,1 @@
+import{p as e,b as p}from"./p-4ed8f8e8.js";e().then(e=>p([["p-7tkgpfko",[[0,"example-component-1"]]],["p-ccz1ocj4",[[0,"example-component-2"]]],["p-ifppnvgv",[[1,"stencil-component-prefetch",{setDelay:[64],setComponents:[64]}]]]],e));

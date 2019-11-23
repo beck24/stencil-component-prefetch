@@ -1,0 +1,1 @@
+import{r as e,h as o}from"./p-4ed8f8e8.js";const r=class{constructor(o){e(this,o)}render(){return o("div",null,"This is the example 1 component")}};export{r as example_component_1};
