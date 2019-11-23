@@ -50,10 +50,7 @@ export class StencilComponentPrefetch {
         const component = Object.assign(document.createElement(c.tag), props);
 
         container.appendChild(component);
-
-        requestAnimationFrame(() => {
-          component.remove();
-        });
+        component.remove();
       });
     }, this.delay);
   }

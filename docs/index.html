@@ -43,7 +43,8 @@
 
   container.innerHTML = '';
   container.appendChild(component);
-} </pretty-code> </example-code> <example-code> <div slot="example"> <h5>With Pre-fetching</h5> <p> This example component does not exist anywhere in the DOM on page load, but is pre-fetched by the browser.<br> Open up developer tools and inspect the network tab.<br> Clear the history to make it easier to see new requests.<br> Click the button and you will see NO network request for the component as it has been pre-fetched.<br> </p> <button onclick="addExample2()">Add Example 2 Component</button> <div id="example-2"></div> <stencil-component-prefetch id="example-2-prefetcher"></stencil-component-prefetch> </div> <pretty-code slot="html" language="html"> &lt;button onClick="addExample2()"&gt;Add Example 2 Component&lt;/button&gt;
+} </pretty-code> </example-code> <example-code> <div slot="example"> <h5>With Pre-fetching</h5> <p> This example component does not exist anywhere in the DOM on page load, but is pre-fetched by the browser.<br> Open up developer tools and inspect the network tab.<br> Clear the history to make it easier to see new requests.<br> Click the button and you will see NO network request for the component as it has been pre-fetched.<br> Refresh the page and try both examples again.<br> You may notice that even with this minimal example component there
+                    is a slight delay adding Example 1 and none for Example 2. </p> <button onclick="addExample2()">Add Example 2 Component</button> <div id="example-2"></div> <stencil-component-prefetch id="example-2-prefetcher"></stencil-component-prefetch> </div> <pretty-code slot="html" language="html"> &lt;button onClick="addExample2()"&gt;Add Example 2 Component&lt;/button&gt;
 
 &lt;div id="example-2"&gt;&lt;/div&gt;
 

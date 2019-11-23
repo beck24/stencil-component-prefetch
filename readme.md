@@ -102,7 +102,7 @@ There are ways to work around these limitations if they are your own stencil com
 
 # State-changing Component prefetch example
 
-If you have a component you want to prefetch, but it modifies state you can add a new prop for the component
+If you have a component you want to prefetch, but it modifies state you can add a new prop to the component
 
     @Prop() prefetching: boolean = false;
 
