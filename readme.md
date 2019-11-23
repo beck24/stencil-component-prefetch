@@ -12,7 +12,7 @@ Hopefully one day that api will come to fruition.  Until then we have this compo
 
 See the demo: https://beck24.github.io/stencil-component-prefetch/
 
-See the component properties/methods: https://github.com/beck24/stenicl-component-prefetch/blob/master/src/components/stencil-component-prefetch/readme.md
+See the component properties/methods: https://github.com/beck24/stencil-component-prefetch/blob/master/src/components/stencil-component-prefetch/readme.md
 
 # Installation
 
