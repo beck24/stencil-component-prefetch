@@ -42,9 +42,9 @@ Make an element reference variable
     export class AppRoot {
       @Element() el: HTMLElement;
 
-Use the `componentDidRender` lifecycle hook to fetch a reference to the prefetcher and pre-fetch your components
+Use the `componentDidLoad` lifecycle hook to fetch a reference to the prefetcher and pre-fetch your components
 
-    componentDidRender() {
+    componentDidLoad() {
 
       const componentsConfig = [
         {
@@ -131,7 +131,7 @@ Early-return on lifecycle hooks that perform actions unwanted during pre-fetchin
       });
     }
 
-    componentDidRender() {
+    componentDidLoad() {
       if (this.prefetching) {
         return;
       }
@@ -141,7 +141,7 @@ Early-return on lifecycle hooks that perform actions unwanted during pre-fetchin
 
 When prefetching this component just set the prop `prefetching` to true in the `app-root`
 
-    componentDidRender() {
+    componentDidLoad() {
 
       const componentsConfig = [
         {

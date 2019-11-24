@@ -1,6 +1,6 @@
 {
   "name": "@beck24/stencil-component-prefetch",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A component for prefetching dependencies for components in a StencilJS app",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
